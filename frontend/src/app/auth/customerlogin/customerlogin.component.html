@@ -1,0 +1,63 @@
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="login-header">
+
+            <div class="bank-icon">
+                🏦
+            </div>
+
+            <h1>Customer Login</h1>
+
+            <p>Welcome Back! Sign in to access your bank account.</p>
+
+        </div>
+
+        <form (ngSubmit)="login()">
+
+            <div class="form-group">
+
+                <label>Account Number</label>
+
+                <input
+                    type="number"
+                    name="accountNo"
+                    [(ngModel)]="accountNo"
+                    placeholder="Enter Account Number"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    name="password"
+                    [(ngModel)]="password"
+                    placeholder="Enter Password"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <div class="footer-links">
+
+            <a routerLink="/">← Back to Home</a>
+
+        </div>
+
+    </div>
+
+</div>

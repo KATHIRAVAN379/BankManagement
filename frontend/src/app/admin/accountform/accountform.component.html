@@ -1,0 +1,103 @@
+<div class="account-page">
+
+    <!-- Header -->
+    <div class="page-header">
+
+        <div>
+            <h1>Create Bank Account</h1>
+            <p>Create a new account for an existing customer</p>
+        </div>
+
+        <button class="back-btn" routerLink="/accounts">
+            ← Back
+        </button>
+
+    </div>
+
+    <!-- Form Card -->
+
+    <div class="form-card">
+
+        <h2>Account Information</h2>
+
+        <form (ngSubmit)="createAccount()">
+
+            <div class="form-grid">
+
+                <!-- Customer ID -->
+
+                <div class="form-group">
+
+                    <label>Customer ID</label>
+
+                    <input
+                        type="number"
+                        [(ngModel)]="customerId"
+                        name="customerId"
+                        placeholder="Enter Customer ID"
+                        required>
+
+                </div>
+
+                <!-- Account Type -->
+
+                <div class="form-group">
+
+                    <label>Account Type</label>
+
+                    <select
+                        [(ngModel)]="accountType"
+                        name="accountType"
+                        required>
+
+                        <option value="">Select Account Type</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Current">Current</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Opening Balance -->
+
+                <div class="form-group full-width">
+
+                    <label>Opening Balance</label>
+
+                    <input
+                        type="number"
+                        [(ngModel)]="balance"
+                        name="balance"
+                        placeholder="Enter Opening Balance"
+                        required>
+
+                </div>
+
+            </div>
+
+            <div class="button-group">
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    💾 Create Account
+
+                </button>
+
+                <button
+                    type="button"
+                    class="reset-btn"
+                    (click)="resetForm()">
+
+                    🔄 Reset
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

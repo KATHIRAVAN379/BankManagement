@@ -1,0 +1,182 @@
+<div class="account-page">
+
+    <!-- Header -->
+    <div class="page-header">
+
+        <div>
+            <h1>Account Management</h1>
+            <p>Manage customer bank accounts</p>
+        </div>
+
+        <button
+            class="back-btn"
+            routerLink="/admindashboard">
+
+            ← Dashboard
+
+        </button>
+
+    </div>
+
+    <!-- Search Card -->
+
+    <div class="search-card">
+
+        <div class="search-left">
+
+            <label>Search Account</label>
+
+            <input
+                type="number"
+                placeholder="Enter Account Number"
+                [(ngModel)]="accountNo">
+
+            <button
+                class="search-btn"
+                (click)="searchAccount()">
+
+                🔍 Search
+
+            </button>
+
+            <button
+                class="show-btn"
+                (click)="clearSearch()">
+
+                Show All
+
+            </button>
+
+        </div>
+
+        <button
+            class="add-btn"
+            routerLink="/createaccount">
+
+            + Create Account
+
+        </button>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Account No</th>
+                    <th>Customer ID</th>
+                    <th>Type</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let acc of accounts">
+
+                    <td>{{acc.accountNo}}</td>
+
+                    <td>{{acc.customerId}}</td>
+
+                    <td>{{acc.accountType}}</td>
+
+                    <td>₹ {{acc.balance | number:'1.2-2'}}</td>
+
+                    <td>
+
+                        <span
+                            class="status active"
+                            *ngIf="acc.status=='ACTIVE'">
+
+                            Active
+
+                        </span>
+
+                        <span
+                            class="status frozen"
+                            *ngIf="acc.status=='FROZEN'">
+
+                            Frozen
+
+                        </span>
+
+                        <span
+                            class="status closed"
+                            *ngIf="acc.status=='CLOSED'">
+
+                            Closed
+
+                        </span>
+
+                    </td>
+
+                    <td>{{acc.createdAt | date:'dd-MMM-yyyy'}}</td>
+
+                    <td>
+
+                        <div class="action-buttons">
+
+                            <button
+                                class="activate-btn"
+                                (click)="activateAccount(acc.accountNo)">
+
+                                Activate
+
+                            </button>
+
+                            <button
+                                class="freeze-btn"
+                                (click)="freeze(acc.accountNo)">
+
+                                Freeze
+
+                            </button>
+
+                            <button
+                                class="close-btn"
+                                (click)="close(acc.accountNo)">
+
+                                Close
+
+                            </button>
+
+                            <button
+                                class="balance-btn"
+                                (click)="checkBalance(acc.accountNo)">
+
+                                Balance
+
+                            </button>
+
+                            <button
+                                class="password-btn"
+                                (click)="resetPassword(acc.accountNo)">
+
+                                Reset Password
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

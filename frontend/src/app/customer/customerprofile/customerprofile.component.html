@@ -1,0 +1,177 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🏦 <span>Bank Customer</span>
+        </div>
+
+        <nav>
+
+            <a routerLink="/customerdashboard">Dashboard</a>
+
+            <a routerLink="/profile" class="active">
+                View Profile
+            </a>
+
+            <a routerLink="/deposit">Deposit</a>
+
+            <a routerLink="/withdraw">Withdraw</a>
+
+            <a routerLink="/transfermoney">Transfer Money</a>
+
+            <a routerLink="/transactionhistory">Transaction History</a>
+
+            <a routerLink="/transferhistory">Transfer History</a>
+
+            <a routerLink="/changepassword">Change Password</a>
+
+        </nav>
+
+        <button class="logout">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="content">
+
+        <div class="header">
+
+            <h1>Customer Profile</h1>
+
+            <p>View and update your personal information</p>
+
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-header">
+
+                <div class="avatar">
+
+                    {{customer.customerName.charAt(0)}}
+
+                </div>
+
+                <div>
+
+                    <h2>{{customer.customerName}}</h2>
+
+                    <p>Customer ID : {{customer.customerId}}</p>
+
+                </div>
+
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="customer.customerName"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="customer.gender"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input
+                        type="date"
+                        [(ngModel)]="customer.dob"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="customer.phone"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        [(ngModel)]="customer.email"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group">
+                    <label>Aadhaar Number</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="customer.aadhaarNo"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group">
+                    <label>PAN Number</label>
+                    <input
+                        type="text"
+                        [(ngModel)]="customer.panNo"
+                        [readonly]="!isEdit">
+                </div>
+
+                <div class="form-group full">
+
+                    <label>Address</label>
+
+                    <textarea
+                        rows="3"
+                        [(ngModel)]="customer.address"
+                        [readonly]="!isEdit">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="edit"
+                    *ngIf="!isEdit"
+                    (click)="enableEdit()">
+
+                    Edit Profile
+
+                </button>
+
+                <button
+                    class="save"
+                    *ngIf="isEdit"
+                    (click)="updateprofile()">
+
+                    Update Profile
+
+                </button>
+
+                <button
+                    class="cancel"
+                    *ngIf="isEdit"
+                    (click)="cancelEdit()">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>

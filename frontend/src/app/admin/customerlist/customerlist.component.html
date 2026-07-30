@@ -1,0 +1,117 @@
+<div class="customer-page">
+
+    <!-- Header -->
+    <div class="page-header">
+        <div>
+            <h1>Customer Management</h1>
+            <p>Manage all registered customers</p>
+        </div>
+
+        <button class="back-btn" routerLink="/admindashboard">
+            ⬅ Dashboard
+        </button>
+    </div>
+
+    <!-- Search Card -->
+    <div class="search-card">
+
+        <div class="search-left">
+
+            <label>Search Customer</label>
+
+            <input
+                type="number"
+                placeholder="Enter Customer ID"
+                [(ngModel)]="customerId">
+
+            <button class="search-btn"
+                    (click)="search()">
+                🔍 Search
+            </button>
+
+            <button class="show-btn"
+                    (click)="loadCustomers()">
+                Show All
+            </button>
+
+        </div>
+
+        <button
+            class="add-btn"
+            routerLink="/addcustomer">
+
+            + Add Customer
+
+        </button>
+
+    </div>
+
+    <!-- Table Card -->
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Aadhaar</th>
+                    <th>PAN</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let c of customers">
+
+                    <td>{{c.customerId}}</td>
+
+                    <td>{{c.customerName}}</td>
+
+                    <td>{{c.gender}}</td>
+
+                    <td>{{c.phone}}</td>
+
+                    <td>{{c.email}}</td>
+
+                    <td>{{c.aadhaarNo}}</td>
+
+                    <td>{{c.panNo}}</td>
+
+                    <td>
+
+                        <button
+                            class="edit-btn"
+                            (click)="editCustomer(c.customerId)">
+
+                            ✏ Edit
+
+                        </button>
+
+                        <button
+                            class="delete-btn"
+                            (click)="deleteCustomer(c.customerId)">
+
+                            🗑 Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

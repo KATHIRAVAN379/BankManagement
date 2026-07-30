@@ -1,0 +1,148 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🏦 <span>Bank Customer</span>
+        </div>
+
+        <nav>
+
+            <a routerLink="/customerdashboard"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact:true}">
+                Dashboard
+            </a>
+
+            <a routerLink="/profile" routerLinkActive="active">
+                View Profile
+            </a>
+
+            <a routerLink="/deposit" routerLinkActive="active">
+                Deposit
+            </a>
+
+            <a routerLink="/withdraw" routerLinkActive="active">
+                Withdraw
+            </a>
+
+            <a routerLink="/transfermoney" routerLinkActive="active">
+                Transfer Money
+            </a>
+
+            <a routerLink="/transactionhistory" routerLinkActive="active">
+                Transaction History
+            </a>
+
+            <a routerLink="/transferhistory" routerLinkActive="active">
+                Transfer History
+            </a>
+
+            <a routerLink="/changepassword" routerLinkActive="active">
+                Change Password
+            </a>
+
+        </nav>
+
+        <button class="logout" (click)="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="content">
+
+        <div class="header">
+
+            <h1>Customer Dashboard</h1>
+
+            <p>Welcome {{customer.customerName}}</p>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <h2>{{customer.customerId}}</h2>
+
+                <span>Customer ID</span>
+
+            </div>
+
+            <div class="card green">
+
+                <h2>{{balance | currency:'INR'}}</h2>
+
+                <span>Current Balance</span>
+
+            </div>
+
+            <div class="card orange">
+
+                <h2>{{customer.phone}}</h2>
+
+                <span>Phone Number</span>
+
+            </div>
+
+            <div class="card red">
+
+                <h2>{{customer.email}}</h2>
+
+                <span>Email</span>
+
+            </div>
+
+        </div>
+
+        <!-- Summary -->
+
+        <div class="summary">
+
+            <h2>Account Summary</h2>
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <td>{{customer.customerName}}</td>
+                </tr>
+
+                <tr>
+                    <th>Gender</th>
+                    <td>{{customer.gender}}</td>
+                </tr>
+
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>{{customer.dob}}</td>
+                </tr>
+
+                <tr>
+                    <th>Phone</th>
+                    <td>{{customer.phone}}</td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td>{{customer.email}}</td>
+                </tr>
+
+                <tr>
+                    <th>Address</th>
+                    <td>{{customer.address}}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>

@@ -1,0 +1,115 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🏦 <span>Bank Customer</span>
+        </div>
+
+        <nav>
+
+            <a routerLink="/customerdashboard">Dashboard</a>
+
+            <a routerLink="/profile">View Profile</a>
+
+            <a routerLink="/deposit">Deposit</a>
+
+            <a routerLink="/withdraw">Withdraw</a>
+
+            <a routerLink="/transfermoney">Transfer Money</a>
+
+            <a routerLink="/transactionhistory">Transaction History</a>
+
+            <a routerLink="/transferhistory" class="active">
+                Transfer History
+            </a>
+
+            <a routerLink="/changepassword">Change Password</a>
+
+        </nav>
+
+        <button class="logout">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <div class="header">
+
+            <h1>Transfer History</h1>
+
+            <p>View all money transfers made from your account</p>
+
+        </div>
+
+        <div class="table-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Transfer ID</th>
+
+                        <th>From Account</th>
+
+                        <th>To Account</th>
+
+                        <th>Amount</th>
+
+                        <th>Status</th>
+
+                        <th>Transfer Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let t of transfers">
+
+                        <td>{{t.transferId}}</td>
+
+                        <td>{{t.fromAccount}}</td>
+
+                        <td>{{t.toAccount}}</td>
+
+                        <td>{{t.amount | currency:'INR'}}</td>
+
+                        <td>
+                            <span class="status">
+                                {{t.status}}
+                            </span>
+                        </td>
+
+                        <td>{{t.transferDate | date:'dd-MM-yyyy HH:mm'}}</td>
+
+                    </tr>
+
+                    <tr *ngIf="transfers.length==0">
+
+                        <td colspan="6" class="empty">
+
+                            No Transfer History Available
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>

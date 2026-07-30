@@ -1,0 +1,95 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🏦 <span>Bank Customer</span>
+        </div>
+
+        <nav>
+
+            <a routerLink="/customerdashboard">Dashboard</a>
+
+            <a routerLink="/profile">View Profile</a>
+
+            <a routerLink="/deposit">Deposit</a>
+
+            <a routerLink="/withdraw" class="active">
+                Withdraw
+            </a>
+
+            <a routerLink="/transfermoney">Transfer Money</a>
+
+            <a routerLink="/transactionhistory">Transaction History</a>
+
+            <a routerLink="/transferhistory">Transfer History</a>
+
+            <a routerLink="/changepassword">Change Password</a>
+
+        </nav>
+
+        <button class="logout">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <div class="header">
+
+            <h1>Withdraw Money</h1>
+
+            <p>Withdraw money securely from your account</p>
+
+        </div>
+
+        <div class="withdraw-card">
+
+            <div class="icon">
+
+                💸
+
+            </div>
+
+            <h2>Withdraw Amount</h2>
+
+            <div class="form-group">
+
+                <label>Amount</label>
+
+                <input
+                    type="number"
+                    [(ngModel)]="amount"
+                    placeholder="Enter withdrawal amount">
+
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="withdraw-btn"
+                    (click)="withdraw()">
+
+                    Withdraw
+
+                </button>
+
+                <button
+                    class="clear-btn"
+                    (click)="clear()">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>

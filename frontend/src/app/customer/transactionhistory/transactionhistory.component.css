@@ -1,0 +1,236 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.dashboard{
+
+    display:flex;
+    min-height:100vh;
+    background:#f4f6fb;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:240px;
+    background:#101c2c;
+    color:white;
+    padding:25px 20px;
+
+}
+
+.logo{
+
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:35px;
+
+}
+
+nav{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+    color:white;
+    padding:13px 18px;
+    border-radius:8px;
+    transition:.3s;
+    font-size:16px;
+
+}
+
+nav a:hover{
+
+    background:#34495e;
+
+}
+
+.active{
+
+    background:#4b6584;
+
+}
+
+.logout{
+
+    width:100%;
+    margin-top:35px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#dc3545;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+.logout:hover{
+
+    background:#bb2d3b;
+
+}
+
+/* Main */
+
+.content{
+
+    flex:1;
+    padding:30px;
+
+}
+
+.header h1{
+
+    font-size:40px;
+    color:#102a43;
+
+}
+
+.header p{
+
+    color:#666;
+    margin-top:5px;
+    font-size:18px;
+
+}
+
+/* Table */
+
+.table-card{
+
+    background:white;
+    margin-top:30px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#1976d2;
+    color:white;
+
+}
+
+th{
+
+    padding:15px;
+    text-align:left;
+    font-size:15px;
+
+}
+
+td{
+
+    padding:15px;
+    border-bottom:1px solid #eee;
+    font-size:15px;
+
+}
+
+tbody tr:hover{
+
+    background:#f8f9fa;
+
+}
+
+/* Status */
+
+.badge{
+
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+
+}
+
+.deposit{
+
+    background:#28a745;
+
+}
+
+.withdraw{
+
+    background:#dc3545;
+
+}
+
+.transfer{
+
+    background:#1976d2;
+
+}
+
+.empty{
+
+    text-align:center;
+    padding:30px;
+    color:gray;
+    font-size:18px;
+
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.table-card{
+
+overflow:auto;
+
+}
+
+table{
+
+min-width:1000px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard{
+
+flex-direction:column;
+
+}
+
+.sidebar{
+
+width:100%;
+
+}
+
+.content{
+
+padding:20px;
+
+}
+
+}

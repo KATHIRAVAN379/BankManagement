@@ -1,0 +1,96 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🏦 <span>Bank Customer</span>
+        </div>
+
+        <nav>
+
+            <a routerLink="/customerdashboard">Dashboard</a>
+
+            <a routerLink="/profile">View Profile</a>
+
+            <a routerLink="/deposit" class="active">
+                Deposit
+            </a>
+
+            <a routerLink="/withdraw">Withdraw</a>
+
+            <a routerLink="/transfermoney">Transfer Money</a>
+
+            <a routerLink="/transactionhistory">Transaction History</a>
+
+            <a routerLink="/transferhistory">Transfer History</a>
+
+            <a routerLink="/changepassword">Change Password</a>
+
+        </nav>
+
+        <button class="logout">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="content">
+
+        <div class="header">
+
+            <h1>Deposit Money</h1>
+
+            <p>Add money to your bank account</p>
+
+        </div>
+
+        <div class="deposit-card">
+
+            <div class="icon">
+
+                💰
+
+            </div>
+
+            <h2>Deposit Amount</h2>
+
+            <div class="form-group">
+
+                <label>Amount</label>
+
+                <input
+                    type="number"
+                    placeholder="Enter amount"
+                    [(ngModel)]="amount">
+
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="deposit-btn"
+                    (click)="deposit()">
+
+                    Deposit
+
+                </button>
+
+                <button
+                    class="clear-btn"
+                    (click)="clear()">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>

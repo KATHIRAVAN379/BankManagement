@@ -1,0 +1,128 @@
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🏦 <span>Bank Customer</span>
+        </div>
+
+        <nav>
+
+            <a routerLink="/customerdashboard">Dashboard</a>
+
+            <a routerLink="/profile">View Profile</a>
+
+            <a routerLink="/deposit">Deposit</a>
+
+            <a routerLink="/withdraw">Withdraw</a>
+
+            <a routerLink="/transfermoney">Transfer Money</a>
+
+            <a routerLink="/transactionhistory" class="active">
+                Transaction History
+            </a>
+
+            <a routerLink="/transferhistory">Transfer History</a>
+
+            <a routerLink="/changepassword">Change Password</a>
+
+        </nav>
+
+        <button class="logout">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <div class="header">
+
+            <h1>Transaction History</h1>
+
+            <p>Your complete account transactions</p>
+
+        </div>
+
+        <div class="table-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Transaction ID</th>
+
+                        <th>Account No</th>
+
+                        <th>Type</th>
+
+                        <th>Amount</th>
+
+                        <th>Balance</th>
+
+                        <th>Description</th>
+
+                        <th>Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let t of transactions">
+
+                        <td>{{t.transactionId}}</td>
+
+                        <td>{{t.accountNo}}</td>
+
+                        <td>
+                            <span
+                                class="badge"
+                                [ngClass]="{
+                                    'deposit': t.transactionType==='DEPOSIT',
+                                    'withdraw': t.transactionType==='WITHDRAW',
+                                    'transfer': t.transactionType==='TRANSFER'
+                                }">
+
+                                {{t.transactionType}}
+
+                            </span>
+
+                        </td>
+
+                        <td>{{t.amount | currency:'INR'}}</td>
+
+                        <td>{{t.balanceAfterTransaction | currency:'INR'}}</td>
+
+                        <td>{{t.description}}</td>
+
+                        <td>{{t.transactionDate | date:'dd-MM-yyyy HH:mm'}}</td>
+
+                    </tr>
+
+                    <tr *ngIf="transactions.length==0">
+
+                        <td colspan="7" class="empty">
+
+                            No Transactions Found
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>

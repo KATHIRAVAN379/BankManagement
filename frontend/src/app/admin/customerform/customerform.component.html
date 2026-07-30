@@ -1,0 +1,141 @@
+<div class="page">
+
+    <div class="header">
+        <h2>{{ isEdit ? 'Update Customer' : 'Add Customer' }}</h2>
+    </div>
+
+    <div class="card">
+
+        <form (ngSubmit)="saveCustomer()">
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input
+                    type="text"
+                    name="customerName"
+                    [(ngModel)]="customer.customerName"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+
+                    <select
+                    name="gender"
+                    [(ngModel)]="customer.gender">
+
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>Date Of Birth</label>
+
+                    <input
+                    type="date"
+                    name="dob"
+                    [(ngModel)]="customer.dob">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input
+                    type="text"
+                    name="phone"
+                    [(ngModel)]="customer.phone">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input
+                    type="email"
+                    name="email"
+                    [(ngModel)]="customer.email">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Aadhaar Number</label>
+
+                    <input
+                    type="text"
+                    name="aadhaarNo"
+                    [(ngModel)]="customer.aadhaarNo">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>PAN Number</label>
+
+                    <input
+                    type="text"
+                    name="panNo"
+                    [(ngModel)]="customer.panNo">
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Address</label>
+
+                <textarea
+                rows="4"
+                name="address"
+                [(ngModel)]="customer.address"></textarea>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="save" type="submit">
+
+                    {{ isEdit ? 'Update Customer' : 'Save Customer' }}
+
+                </button>
+
+                <button
+                type="button"
+                class="reset"
+                (click)="resetForm()">
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

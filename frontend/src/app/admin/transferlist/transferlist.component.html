@@ -1,0 +1,127 @@
+<div class="transfer-page">
+
+    <!-- Header -->
+    <div class="page-header">
+
+        <div>
+            <h1>Transfer Management</h1>
+            <p>View and monitor all money transfers</p>
+        </div>
+
+        <button class="back-btn" routerLink="/admindashboard">
+            ← Dashboard
+        </button>
+
+    </div>
+
+    <!-- Search Card -->
+
+    <div class="search-card">
+
+        <div class="search-left">
+
+            <label>Search Transfers</label>
+
+            <input
+                type="number"
+                placeholder="Enter Account Number"
+                [(ngModel)]="accountNo">
+
+            <button
+                class="search-btn"
+                (click)="searchTransfers()">
+
+                🔍 Search
+
+            </button>
+
+            <button
+                class="show-btn"
+                (click)="clearSearch()">
+
+                Show All
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Transfer ID</th>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Transfer Date</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let t of transfers">
+
+                    <td>{{t.transferId}}</td>
+
+                    <td>{{t.fromAccount}}</td>
+
+                    <td>{{t.toAccount}}</td>
+
+                    <td class="amount">
+                        ₹ {{t.amount | number:'1.2-2'}}
+                    </td>
+
+                    <td>
+
+                        <span
+                            class="badge success"
+                            *ngIf="t.status=='SUCCESS'">
+
+                            Success
+
+                        </span>
+
+                        <span
+                            class="badge pending"
+                            *ngIf="t.status=='PENDING'">
+
+                            Pending
+
+                        </span>
+
+                        <span
+                            class="badge failed"
+                            *ngIf="t.status=='FAILED'">
+
+                            Failed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        {{t.transferDate | date:'dd-MMM-yyyy hh:mm a'}}
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

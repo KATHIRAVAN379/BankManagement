@@ -1,0 +1,120 @@
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="login-header">
+
+            <div class="bank-icon">
+                🛡️
+            </div>
+
+            <h1>Admin Login</h1>
+
+            <p>Secure Banking Administration Portal</p>
+
+        </div>
+
+        <form (ngSubmit)="login()">
+
+            <!-- Username -->
+
+            <div class="form-group">
+
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    name="username"
+                    [(ngModel)]="username"
+                    placeholder="Enter Username"
+                    required>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <div class="password-box">
+
+                    <input
+                        [type]="showPassword ? 'text' : 'password'"
+                        name="password"
+                        [(ngModel)]="password"
+                        placeholder="Enter Password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="eye-btn"
+                        (click)="showPassword=!showPassword">
+
+                        {{showPassword ? '🙈' : '👁'}}
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Remember -->
+
+            <div class="options">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        [(ngModel)]="rememberMe"
+                        name="rememberMe">
+
+                    Remember Me
+
+                </label>
+
+            </div>
+
+            <!-- Error -->
+
+            <div
+                class="error"
+                *ngIf="errorMessage">
+
+                {{errorMessage}}
+
+            </div>
+
+            <!-- Login -->
+
+            <button
+                class="login-btn"
+                type="submit"
+                [disabled]="loading">
+
+                <span *ngIf="!loading">
+
+                    Login
+
+                </span>
+
+                <span *ngIf="loading">
+
+                    Logging in...
+
+                </span>
+
+            </button>
+
+        </form>
+
+        <div class="footer">
+
+            <a routerLink="/">← Back to Home</a>
+
+        </div>
+
+    </div>
+
+</div>

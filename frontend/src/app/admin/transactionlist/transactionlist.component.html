@@ -1,0 +1,140 @@
+<div class="transaction-page">
+
+    <!-- Header -->
+    <div class="page-header">
+
+        <div>
+            <h1>Transaction Management</h1>
+            <p>View and monitor all customer transactions</p>
+        </div>
+
+        <button class="back-btn" routerLink="/admindashboard">
+            ← Dashboard
+        </button>
+
+    </div>
+
+    <!-- Search Card -->
+
+    <div class="search-card">
+
+        <div class="search-left">
+
+            <label>Search Transactions</label>
+
+            <input
+                type="number"
+                placeholder="Enter Account Number"
+                [(ngModel)]="accountNo">
+
+            <button
+                class="search-btn"
+                (click)="searchTransactions()">
+
+                🔍 Search
+
+            </button>
+
+            <button
+                class="show-btn"
+                (click)="clearSearch()">
+
+                Show All
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Transaction ID</th>
+                    <th>Account No</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
+                    <th>Description</th>
+                    <th>Date & Time</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let t of transactions">
+
+                    <td>{{t.transactionId}}</td>
+
+                    <td>{{t.accountNo}}</td>
+
+                    <td>
+
+                        <span
+                            class="badge deposit"
+                            *ngIf="t.transactionType=='DEPOSIT'">
+
+                            Deposit
+
+                        </span>
+
+                        <span
+                            class="badge withdraw"
+                            *ngIf="t.transactionType=='WITHDRAW'">
+
+                            Withdraw
+
+                        </span>
+
+                        <span
+                            class="badge transfer"
+                            *ngIf="t.transactionType=='TRANSFER'">
+
+                            Transfer
+
+                        </span>
+
+                    </td>
+
+                    <td class="amount">
+
+                        ₹ {{t.amount | number:'1.2-2'}}
+
+                    </td>
+
+                    <td>
+
+                        ₹ {{t.balanceAfterTransaction | number:'1.2-2'}}
+
+                    </td>
+
+                    <td>
+
+                        {{t.description}}
+
+                    </td>
+
+                    <td>
+
+                        {{t.transactionDate | date:'dd-MMM-yyyy hh:mm a'}}
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
