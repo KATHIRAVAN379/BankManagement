@@ -164,75 +164,108 @@ BankManagement
 
 ## Home Page
 
-*(Add Screenshot)*
+<img width="505" height="488" alt="image" src="https://github.com/user-attachments/assets/c99e70fa-77b8-4cdf-b066-805eb67e8923" />
+
 
 ---
 
 ## Admin Login
 
-*(Add Screenshot)*
+<img width="326" height="384" alt="image" src="https://github.com/user-attachments/assets/7ec9a34d-9c20-423c-9692-6403dfcffa00" />
+
 
 ---
 
 ## Admin Dashboard
 
-*(Add Screenshot)*
+<img width="937" height="469" alt="image" src="https://github.com/user-attachments/assets/bf6fa5b4-8866-494f-8dca-a47df471629a" />
+
 
 ---
 
 ## Customer Management
 
-*(Add Screenshot)*
+<img width="925" height="331" alt="image" src="https://github.com/user-attachments/assets/42ec8cee-87ce-4a88-82ab-ddec685cb6d8" />
+
 
 ---
 
 ## Account Management
 
-*(Add Screenshot)*
+*<img width="926" height="315" alt="image" src="https://github.com/user-attachments/assets/84053025-c988-4bda-be1b-22670af3c2ec" />
 
 ---
 
+## Transaction Management
+<img width="916" height="485" alt="image" src="https://github.com/user-attachments/assets/234a6959-b657-4627-853c-2712b3a8e549" />
+
+---
+##Transfer Management
+<img width="918" height="360" alt="image" src="https://github.com/user-attachments/assets/08b5c6d2-f0a8-47df-9ea4-507b64c12b73" />
+
+---
+
+##Customer Login
+
+<img width="415" height="452" alt="image" src="https://github.com/user-attachments/assets/9d4c3324-6e4f-4134-a9fa-cd74de1c9b8b" />
+
+--
+
+
 ## Customer Dashboard
 
-*(Add Screenshot)*
+<img width="924" height="503" alt="image" src="https://github.com/user-attachments/assets/5a0023bc-6006-496c-9fc5-71b99c0efe49" />
+
 
 ---
 
 ## Customer Profile
 
-*(Add Screenshot)*
+<img width="845" height="379" alt="image" src="https://github.com/user-attachments/assets/d93790b8-d214-4071-ba5a-1a9f015fad1c" />
+
 
 ---
 
 ## Deposit
 
-*(Add Screenshot)*
+<img width="724" height="428" alt="image" src="https://github.com/user-attachments/assets/ad604e4d-d365-4db3-a379-edb6cd977a62" />
+
 
 ---
 
 ## Withdraw
 
-*(Add Screenshot)*
+<img width="617" height="404" alt="image" src="https://github.com/user-attachments/assets/cce26410-8928-47bb-91ff-31242510c434" />
+
 
 ---
 
 ## Transfer Money
 
-*(Add Screenshot)*
+<img width="614" height="451" alt="image" src="https://github.com/user-attachments/assets/3757e34a-6c57-44d1-9aed-1224e8e79b0b" />
+
 
 ---
 
 ## Transaction History
 
-*(Add Screenshot)*
+<img width="761" height="397" alt="image" src="https://github.com/user-attachments/assets/4b260769-bb77-4b25-96a0-7b109542ca0d" />
+
 
 ---
 
 ## Transfer History
 
-*(Add Screenshot)*
+<img width="759" height="283" alt="image" src="https://github.com/user-attachments/assets/5b0b9d0b-782c-4de8-abc9-0b4f1710883f" />
 
 ---
+
+##Change Password
+
+<img width="608" height="449" alt="image" src="https://github.com/user-attachments/assets/89014e88-7e81-4b1a-8fac-21ffba34e30e" />
+
+
+--
 
 # ⚙️ Installation
 
