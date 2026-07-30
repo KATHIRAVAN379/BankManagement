@@ -1,23 +1,40 @@
-# 🏦 Full Stack Bank Management System
+# 🏦 Bank Management System
 
-A Full Stack Bank Management System developed using **Angular**, **Spring Boot**, **Hibernate (JPA)**, and **MySQL**. This application provides secure banking operations through separate **Admin** and **Customer** modules with a responsive Angular frontend and RESTful Spring Boot backend.
+A **Full Stack Bank Management System** developed using **Angular**, **Spring Boot**, **Spring Security**, **JWT Authentication**, **Hibernate (JPA)**, and **MySQL**. The application provides secure banking operations through separate **Admin** and **Customer** modules with a responsive Angular frontend and RESTful Spring Boot backend.
 
 ---
 
-## 🚀 Features
+## 📌 Project Overview
 
-### 👨‍💼 Admin Module
-- Admin Login
+This project is designed to automate banking operations by providing secure and efficient management of customers, accounts, and financial transactions. It follows a layered architecture with Angular as the frontend, Spring Boot as the backend, and MySQL as the database.
+
+---
+
+# 🚀 Features
+
+## 👨‍💼 Admin Module
+
+- Secure Admin Login
 - Dashboard
-- Customer Management (Add, Update, Delete, View)
+- Customer Management
+  - Add Customer
+  - Update Customer
+  - Delete Customer
+  - View Customers
 - Account Management
+  - Create Account
+  - Update Account
+  - Delete Account
+  - View Accounts
 - Transaction Management
 - Transfer Management
-- Reports *(In Progress)*
 - Logout
 
-### 👤 Customer Module
-- Customer Login
+---
+
+## 👤 Customer Module
+
+- Secure Customer Login
 - Dashboard
 - View Profile
 - Update Profile
@@ -32,47 +49,73 @@ A Full Stack Bank Management System developed using **Angular**, **Spring Boot**
 
 ---
 
-## 🛠️ Technology Stack
+# 🔐 Security Features
 
-### Frontend
+- Spring Security
+- JWT Authentication
+- BCrypt Password Encryption
+- Protected REST APIs
+- Role-Based Authorization
+- Secure Login Authentication
+- Password Hashing
+- Session Management using JWT Token
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
 - Angular
 - TypeScript
 - HTML5
 - CSS3
 - RxJS
 
-### Backend
+## Backend
+
 - Java 17
 - Spring Boot
+- Spring Security
 - Spring Data JPA (Hibernate)
 - REST APIs
+- JWT Authentication
 
-### Database
+## Database
+
 - MySQL
 
-### Tools
+## Build Tool
+
+- Maven
+
+## IDE
+
 - VS Code
 - Eclipse IDE
-- Maven
+
+## Version Control
+
 - Git
 - GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
-BankManagement/
+BankManagement
 │
-├── frontend/
-│   ├── src/
+├── frontend
+│   ├── src
 │   ├── angular.json
 │   ├── package.json
 │   └── ...
 │
-├── backend/
-│   ├── src/
+├── backend
+│   ├── src
 │   ├── pom.xml
+│   ├── mvnw
 │   └── ...
 │
 └── README.md
@@ -80,32 +123,9 @@ BankManagement/
 
 ---
 
-## 📌 Modules
+# 🗄️ Database
 
-### Admin
-- Customer CRUD
-- Account CRUD
-- Transaction Monitoring
-- Transfer Monitoring
-- Dashboard
-- Reports
-
-### Customer
-- Deposit
-- Withdraw
-- Transfer
-- Transaction History
-- Transfer History
-- Profile Management
-- Password Management
-
----
-
-## 🗄️ Database
-
-**MySQL**
-
-Major Tables
+### Tables
 
 - Admin
 - Customer
@@ -115,42 +135,122 @@ Major Tables
 
 ---
 
-## 🔄 Application Workflow
+# 🔄 Application Workflow
 
 ```
-Admin/Customer Login
-        │
-        ▼
-Angular Frontend
-        │
- REST API Calls
-        │
-        ▼
-Spring Boot Backend
-        │
-Hibernate (JPA)
-        │
-        ▼
-MySQL Database
+             User
+               │
+               ▼
+      Angular Frontend
+               │
+        HTTP REST API
+               │
+               ▼
+        Spring Boot API
+               │
+      Spring Security
+               │
+      JWT Authentication
+               │
+      Hibernate (JPA)
+               │
+               ▼
+          MySQL Database
 ```
 
 ---
 
-## ⚙️ Installation
+# 📸 Application Screenshots
 
-### 1. Clone Repository
+## Home Page
+
+*(Add Screenshot)*
+
+---
+
+## Admin Login
+
+*(Add Screenshot)*
+
+---
+
+## Admin Dashboard
+
+*(Add Screenshot)*
+
+---
+
+## Customer Management
+
+*(Add Screenshot)*
+
+---
+
+## Account Management
+
+*(Add Screenshot)*
+
+---
+
+## Customer Dashboard
+
+*(Add Screenshot)*
+
+---
+
+## Customer Profile
+
+*(Add Screenshot)*
+
+---
+
+## Deposit
+
+*(Add Screenshot)*
+
+---
+
+## Withdraw
+
+*(Add Screenshot)*
+
+---
+
+## Transfer Money
+
+*(Add Screenshot)*
+
+---
+
+## Transaction History
+
+*(Add Screenshot)*
+
+---
+
+## Transfer History
+
+*(Add Screenshot)*
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/KATHIRAVAN379/BankManagement.git
 ```
 
-### 2. Backend
+---
+
+## Backend Setup
 
 ```bash
 cd backend
 ```
 
-Configure the MySQL database in:
+Configure MySQL database credentials in:
 
 ```
 application.properties
@@ -158,23 +258,7 @@ application.properties
 
 Run the Spring Boot application.
 
----
-
-### 3. Frontend
-
-```bash
-cd frontend
-npm install
-ng serve
-```
-
-Angular runs at
-
-```
-http://localhost:4200
-```
-
-Spring Boot runs at
+Default Backend URL
 
 ```
 http://localhost:8080
@@ -182,59 +266,69 @@ http://localhost:8080
 
 ---
 
-## 📸 Screenshots
+## Frontend Setup
 
-### Home Page
+```bash
+cd frontend
+npm install
+ng serve
+```
 
-*(Add Screenshot)*
+Default Frontend URL
 
-### Admin Dashboard
-
-*(Add Screenshot)*
-
-### Customer Dashboard
-
-*(Add Screenshot)*
-
-### Deposit
-
-*(Add Screenshot)*
-
-### Withdraw
-
-*(Add Screenshot)*
-
-### Transfer Money
-
-*(Add Screenshot)*
-
-### Transaction History
-
-*(Add Screenshot)*
+```
+http://localhost:4200
+```
 
 ---
 
-## 🔮 Future Enhancements
+# 📚 REST APIs
+
+### Admin APIs
+
+- Login
+- Customer CRUD
+- Account CRUD
+- Transaction APIs
+- Transfer APIs
+
+### Customer APIs
+
+- Login
+- View Profile
+- Update Profile
+- Check Balance
+- Deposit
+- Withdraw
+- Transfer Money
+- Transaction History
+- Transfer History
+- Change Password
+
+---
+
+# 🔮 Future Enhancements
 
 - Reports Module
-- PDF Export
-- Excel Export
-- Spring Security
-- JWT Authentication
-- BCrypt Password Encryption
+- PDF Report Export
+- Excel Report Export
 - Email Notifications
-- Dashboard Charts
+- Dashboard Analytics
+- Docker Deployment
+- Cloud Deployment (AWS/Azure)
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Kathiravan K**
+## Kathiravan K
 
-- GitHub: https://github.com/KATHIRAVAN379
+**GitHub**
+
+https://github.com/KATHIRAVAN379
 
 ---
 
-## ⭐ If you like this project
+# ⭐ Support
 
-Please consider giving this repository a **Star ⭐**.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
