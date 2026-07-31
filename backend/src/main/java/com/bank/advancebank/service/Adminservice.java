@@ -1,5 +1,7 @@
 package com.bank.advancebank.service;
 import java.time.LocalDateTime;
+
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,8 @@ import com.bank.advancebank.repository.Adminrepository;
 import com.bank.advancebank.repository.Customerrepository;
 import com.bank.advancebank.repository.Transactionrepository;
 import com.bank.advancebank.repository.Transferrepository;
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
 public class Adminservice {
 	@Autowired
@@ -88,15 +92,28 @@ public class Adminservice {
 		existcustomer.setPanNo(customer.getPanNo());
 		return customerrepo.save(existcustomer);
 	}
+	@Transactional
 	public String deleteCustomer(int customerId)
 	{
 		Customerentity customer=customerrepo.findById(customerId).orElseThrow(()->
 		new RuntimeException("customer not found"));
-		if(accountrepo.findByCustomerId(customerId).isPresent())
-		{
-			throw new RuntimeException("first close the account account still active");
-		}
-		customerrepo.delete(customer);
+		Accountentity account = accountrepo.findByCustomerId(customerId)
+	            .orElse(null);
+
+	    if (account != null) {
+	    	Long accountNo=account.getAccountNo();
+
+	        // Delete all transactions of this account
+	        transactionrepo.deleteAllByAccountNo(accountNo);
+	        //delete transfer
+	        transferrepo.deleteAllByFromAccount(accountNo);
+	        transferrepo.deleteAllByToAccount(accountNo);
+	        // Delete account
+	        accountrepo.delete(account);
+	    }
+
+	    // Delete customer
+	    customerrepo.delete(customer);
 		return "customer deleted";
 	}
 	public Customerentity getCustomerById(int customerId)
