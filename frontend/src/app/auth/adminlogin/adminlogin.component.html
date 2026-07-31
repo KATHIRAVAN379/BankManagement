@@ -1,120 +1,101 @@
-<div class="login-container">
-
-    <div class="login-card">
-
-        <div class="login-header">
-
-            <div class="bank-icon">
-                🛡️
-            </div>
-
-            <h1>Admin Login</h1>
-
-            <p>Secure Banking Administration Portal</p>
-
+<div class="auth-wrapper">
+  <div class="auth-card-container">
+    <!-- Left Info Side -->
+    <div class="auth-banner admin-banner">
+      <div class="banner-content">
+        <div class="banner-badge">
+          <i class="fa-solid fa-user-shield"></i> System Admin Portal
         </div>
-
-        <form (ngSubmit)="login()">
-
-            <!-- Username -->
-
-            <div class="form-group">
-
-                <label>Username</label>
-
-                <input
-                    type="text"
-                    name="username"
-                    [(ngModel)]="username"
-                    placeholder="Enter Username"
-                    required>
-
-            </div>
-
-            <!-- Password -->
-
-            <div class="form-group">
-
-                <label>Password</label>
-
-                <div class="password-box">
-
-                    <input
-                        [type]="showPassword ? 'text' : 'password'"
-                        name="password"
-                        [(ngModel)]="password"
-                        placeholder="Enter Password"
-                        required>
-
-                    <button
-                        type="button"
-                        class="eye-btn"
-                        (click)="showPassword=!showPassword">
-
-                        {{showPassword ? '🙈' : '👁'}}
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- Remember -->
-
-            <div class="options">
-
-                <label>
-
-                    <input
-                        type="checkbox"
-                        [(ngModel)]="rememberMe"
-                        name="rememberMe">
-
-                    Remember Me
-
-                </label>
-
-            </div>
-
-            <!-- Error -->
-
-            <div
-                class="error"
-                *ngIf="errorMessage">
-
-                {{errorMessage}}
-
-            </div>
-
-            <!-- Login -->
-
-            <button
-                class="login-btn"
-                type="submit"
-                [disabled]="loading">
-
-                <span *ngIf="!loading">
-
-                    Login
-
-                </span>
-
-                <span *ngIf="loading">
-
-                    Logging in...
-
-                </span>
-
-            </button>
-
-        </form>
-
-        <div class="footer">
-
-            <a routerLink="/">← Back to Home</a>
-
+        <h2>Enterprise Bank Administration</h2>
+        <p>Manage customer directory, account activations, ledger transactions, and export comprehensive financial reports.</p>
+        
+        <div class="banner-features">
+          <div class="feature-item">
+            <i class="fa-solid fa-lock-keyhole"></i>
+            <span>Multi-Factor Security Encrypted</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-chart-line-up"></i>
+            <span>Real-time Financial Audit Logs</span>
+          </div>
         </div>
-
+      </div>
     </div>
 
+    <!-- Right Form Side -->
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <div class="mobile-logo">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <h1>Administrator Login</h1>
+        <p>Please enter your credentials to access system controls.</p>
+      </div>
+
+      <form (ngSubmit)="login()" class="auth-form">
+        <!-- Username -->
+        <div class="mnc-form-group">
+          <label class="mnc-label">Administrator Username</label>
+          <div class="mnc-input-wrapper">
+            <i class="fa-solid fa-user mnc-input-icon"></i>
+            <input 
+              type="text" 
+              class="mnc-input mnc-input-has-icon" 
+              name="username" 
+              [(ngModel)]="username" 
+              placeholder="e.g. admin_master" 
+              required>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mnc-form-group">
+          <label class="mnc-label">Password</label>
+          <div class="mnc-input-wrapper">
+            <i class="fa-solid fa-key mnc-input-icon"></i>
+            <input 
+              [type]="showPassword ? 'text' : 'password'" 
+              class="mnc-input mnc-input-has-icon" 
+              name="password" 
+              [(ngModel)]="password" 
+              placeholder="Enter secure password" 
+              required>
+            <button 
+              type="button" 
+              class="toggle-eye-btn" 
+              (click)="showPassword = !showPassword">
+              <i class="fa-solid" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+            <span class="checkmark"></span>
+            Keep session active
+          </label>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="mnc-alert mnc-alert-danger" *ngIf="errorMessage">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>{{errorMessage}}</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="mnc-btn mnc-btn-primary submit-btn" type="submit" [disabled]="loading">
+          <span *ngIf="!loading"><i class="fa-solid fa-right-to-bracket"></i> Sign In to Portal</span>
+          <span *ngIf="loading"><i class="fa-solid fa-spinner fa-spin"></i> Authenticating...</span>
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <a routerLink="/" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i> Return to Main Portal
+        </a>
+      </div>
+    </div>
+  </div>
 </div>

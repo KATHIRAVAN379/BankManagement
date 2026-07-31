@@ -1,1 +1,749 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   ADVANCE BANK - MNC ENTERPRISE DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Color Tokens */
+  --navy-950: #090D16;
+  --navy-900: #0F172A;
+  --navy-800: #1E293B;
+  --navy-700: #334155;
+  --navy-600: #475569;
+  
+  --primary-600: #2563EB;
+  --primary-500: #3B82F6;
+  --primary-400: #60A5FA;
+  --primary-100: #DBEAFE;
+  --primary-50: #EFF6FF;
+
+  --emerald-600: #059669;
+  --emerald-500: #10B981;
+  --emerald-100: #D1FAE5;
+
+  --rose-600: #DC2626;
+  --rose-500: #EF4444;
+  --rose-100: #FEE2E2;
+
+  --amber-600: #D97706;
+  --amber-500: #F59E0B;
+  --amber-100: #FEF3C7;
+
+  --purple-600: #9333EA;
+  --purple-500: #A855F7;
+  --purple-100: #F3E8FF;
+
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15,23,42,0.08), 0 4px 6px -2px rgba(15,23,42,0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(15,23,42,0.12), 0 10px 10px -5px rgba(15,23,42,0.04);
+  --shadow-glow: 0 0 25px rgba(37,99,235,0.25);
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family);
+  background-color: var(--slate-50);
+  color: var(--slate-900);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--slate-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-400);
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURE (GLOBAL SIDEBAR & CONTAINER)
+   ========================================================================== */
+
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #F8FAFC;
+}
+
+/* Corporate Sidebar */
+.mnc-sidebar {
+  width: 280px;
+  background: var(--navy-900);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem 1.25rem;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.mnc-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mnc-brand-logo {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.35rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.mnc-brand-text h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.mnc-brand-text span {
+  font-size: 0.72rem;
+  color: var(--primary-400);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mnc-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.mnc-nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  color: var(--slate-400);
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mnc-nav-item a i {
+  font-size: 1.1rem;
+  width: 22px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.mnc-nav-item a:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mnc-nav-item a:hover i {
+  transform: translateX(2px);
+}
+
+.mnc-nav-item a.active {
+  color: #FFFFFF;
+  background: linear-gradient(90deg, var(--primary-600), #1D4ED8);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.mnc-sidebar-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mnc-logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mnc-logout-btn:hover {
+  background: var(--rose-600);
+  color: white;
+  border-color: var(--rose-600);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Main Content Area */
+.mnc-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.mnc-top-bar {
+  height: 72px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--slate-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.mnc-top-title h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+}
+
+.mnc-top-title p {
+  font-size: 0.82rem;
+  color: var(--slate-600);
+}
+
+.mnc-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.mnc-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 30px;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  background: var(--primary-600);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  line-height: 1.1;
+}
+
+.user-role {
+  font-size: 0.72rem;
+  color: var(--slate-600);
+}
+
+.mnc-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+/* ==========================================================================
+   UI COMPONENTS & CARDS
+   ========================================================================== */
+
+.mnc-card {
+  background: #FFFFFF;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.mnc-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.mnc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.mnc-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mnc-card-title i {
+  color: var(--primary-600);
+}
+
+/* Metric Cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.metric-card {
+  background: #FFFFFF;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--slate-300);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-600);
+}
+
+.metric-card.blue::before { background: var(--primary-600); }
+.metric-card.emerald::before { background: var(--emerald-500); }
+.metric-card.amber::before { background: var(--amber-500); }
+.metric-card.purple::before { background: var(--purple-500); }
+.metric-card.rose::before { background: var(--rose-500); }
+
+.metric-info p {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.metric-info h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.metric-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.metric-card.blue .metric-icon { background: var(--primary-50); color: var(--primary-600); }
+.metric-card.emerald .metric-icon { background: var(--emerald-100); color: var(--emerald-600); }
+.metric-card.amber .metric-icon { background: var(--amber-100); color: var(--amber-600); }
+.metric-card.purple .metric-icon { background: var(--purple-100); color: var(--purple-600); }
+.metric-card.rose .metric-icon { background: var(--rose-100); color: var(--rose-600); }
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--slate-200);
+  background: #FFFFFF;
+}
+
+.mnc-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.mnc-table th {
+  background: var(--slate-100);
+  color: var(--slate-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.mnc-table td {
+  padding: 1rem 1.25rem;
+  color: var(--slate-800);
+  border-bottom: 1px solid var(--slate-100);
+  vertical-align: middle;
+  transition: background 0.15s ease;
+}
+
+.mnc-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mnc-table tbody tr:hover td {
+  background: var(--slate-50);
+}
+
+/* Status Badges */
+.mnc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mnc-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.mnc-badge.success, .mnc-badge.active, .mnc-badge.deposit {
+  background: var(--emerald-100);
+  color: var(--emerald-600);
+}
+.mnc-badge.success::before, .mnc-badge.active::before, .mnc-badge.deposit::before {
+  background: var(--emerald-500);
+}
+
+.mnc-badge.warning, .mnc-badge.frozen, .mnc-badge.withdraw {
+  background: var(--amber-100);
+  color: var(--amber-600);
+}
+.mnc-badge.warning::before, .mnc-badge.frozen::before, .mnc-badge.withdraw::before {
+  background: var(--amber-500);
+}
+
+.mnc-badge.danger, .mnc-badge.closed, .mnc-badge.failed {
+  background: var(--rose-100);
+  color: var(--rose-600);
+}
+.mnc-badge.danger::before, .mnc-badge.closed::before, .mnc-badge.failed::before {
+  background: var(--rose-500);
+}
+
+.mnc-badge.info, .mnc-badge.transfer {
+  background: var(--primary-100);
+  color: var(--primary-600);
+}
+.mnc-badge.info::before, .mnc-badge.transfer::before {
+  background: var(--primary-500);
+}
+
+/* ==========================================================================
+   BUTTONS & INPUTS
+   ========================================================================== */
+
+.mnc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.mnc-btn-primary {
+  background: linear-gradient(135deg, var(--primary-600), #1D4ED8);
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.mnc-btn-primary:hover {
+  background: linear-gradient(135deg, #1D4ED8, #1E40AF);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.mnc-btn-emerald {
+  background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.mnc-btn-emerald:hover {
+  background: linear-gradient(135deg, var(--emerald-600), #047857);
+  transform: translateY(-1px);
+}
+
+.mnc-btn-secondary {
+  background: var(--slate-100);
+  color: var(--slate-700);
+  border: 1px solid var(--slate-200);
+}
+
+.mnc-btn-secondary:hover {
+  background: var(--slate-200);
+  color: var(--slate-900);
+}
+
+.mnc-btn-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--rose-600);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.mnc-btn-danger:hover {
+  background: var(--rose-600);
+  color: white;
+}
+
+.mnc-btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  border-radius: 8px;
+}
+
+/* Inputs & Form Control */
+.mnc-form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mnc-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+.mnc-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mnc-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--slate-400);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.mnc-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--slate-900);
+  background: #FFFFFF;
+  border: 1.5px solid var(--slate-200);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.mnc-input-has-icon {
+  padding-left: 2.75rem;
+}
+
+.mnc-input:focus {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.mnc-input::placeholder {
+  color: var(--slate-400);
+}
+
+.mnc-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--slate-900);
+  background: #FFFFFF;
+  border: 1.5px solid var(--slate-200);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mnc-select:focus {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Alert Banner */
+.mnc-alert {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.mnc-alert-danger {
+  background: var(--rose-100);
+  color: var(--rose-600);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.mnc-alert-success {
+  background: var(--emerald-100);
+  color: var(--emerald-600);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Quick Select Chips */
+.quick-chips {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.chip-btn {
+  padding: 0.45rem 0.9rem;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--slate-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+  background: var(--primary-50);
+  color: var(--primary-600);
+  border-color: var(--primary-100);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .app-wrapper {
+    flex-direction: column;
+  }
+  .mnc-sidebar {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+  .mnc-brand {
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    border-bottom: none;
+  }
+  .mnc-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  .mnc-nav-item a {
+    white-space: nowrap;
+    padding: 0.6rem 0.85rem;
+  }
+  .mnc-sidebar-footer {
+    display: none;
+  }
+}

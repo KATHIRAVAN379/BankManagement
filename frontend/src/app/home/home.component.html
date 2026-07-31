@@ -1,94 +1,100 @@
-<div class="container">
-
-    <div class="login-card">
-
-        <!-- Logo -->
-        <div class="logo-section">
-
-            <div class="bank-logo">
-                🏦
-            </div>
-
-            <h1>Advance Bank System</h1>
-
-            <p>Secure • Reliable • Trusted Banking</p>
-
+<div class="landing-page">
+  <!-- Top Navigation Header -->
+  <header class="landing-header">
+    <div class="landing-nav-container">
+      <div class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-building-columns"></i>
         </div>
-
-        <!-- Heading -->
-
-        <div class="heading">
-
-            <h2>Login As</h2>
-
-            <p>Select your role to continue</p>
-
+        <div class="logo-text">
+          <h2>ADVANCE <span>BANK</span></h2>
+          <p>Global Financial Portal</p>
         </div>
-
-        <!-- Cards -->
-
-        <div class="cards">
-
-            <!-- Admin -->
-
-            <div class="card admin-card"
-
-                 routerLink="/adminlogin">
-
-                <div class="card-icon admin-icon">
-
-                    👨‍💼
-
-                </div>
-
-                <h3>Administrator</h3>
-
-                <p>
-
-                    Manage customers, accounts,
-
-                    transactions, reports and
-
-                    banking operations.
-
-                </p>
-
-            </div>
-
-            <!-- Customer -->
-
-            <div class="card customer-card"
-
-                 routerLink="/customerlogin">
-
-                <div class="card-icon customer-icon">
-
-                    👤
-
-                </div>
-
-                <h3>Customer</h3>
-
-                <p>
-
-                    Deposit, withdraw,
-
-                    transfer money and
-
-                    manage your account.
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="footer">
-
-            © 2026 Advance Bank. All Rights Reserved.
-
-        </div>
-
+      </div>
+      <div class="nav-badges">
+        <span class="badge-item"><i class="fa-solid fa-shield-halved"></i> 256-Bit SSL Encrypted</span>
+        <span class="badge-item"><i class="fa-solid fa-circle-check"></i> FDIC Insured</span>
+      </div>
     </div>
+  </header>
 
+  <!-- Hero Section -->
+  <main class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="hero-pill"><i class="fa-solid fa-sparkles"></i> Next-Gen Enterprise Banking</span>
+        <h1>Empowering Your Financial <span>Future Today</span></h1>
+        <p>Experience seamless, secure, and intelligent internet banking for corporate management and personal wealth growth.</p>
+        
+        <div class="trust-metrics">
+          <div class="trust-item">
+            <h4>₹500B+</h4>
+            <span>Secured Transactions</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <h4>99.99%</h4>
+            <span>Platform Uptime</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <h4>24 / 7</h4>
+            <span>Real-time Monitoring</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portal Access Cards -->
+      <div class="portal-cards">
+        <!-- Admin Card -->
+        <div class="portal-card admin-portal" routerLink="/adminlogin">
+          <div class="card-top">
+            <div class="card-icon blue">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <span class="portal-tag">System Access</span>
+          </div>
+          <h3>Administrator Portal</h3>
+          <p>Comprehensive dashboard to oversee customer accounts, manage audit trails, approve transactions, and generate analytical reports.</p>
+          <div class="card-features">
+            <span><i class="fa-solid fa-check"></i> Account Governance</span>
+            <span><i class="fa-solid fa-check"></i> Transaction Audits</span>
+            <span><i class="fa-solid fa-check"></i> Financial Analytics</span>
+          </div>
+          <button class="portal-btn btn-blue">
+            <span>Login as Administrator</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Customer Card -->
+        <div class="portal-card customer-portal" routerLink="/customerlogin">
+          <div class="card-top">
+            <div class="card-icon emerald">
+              <i class="fa-solid fa-wallet"></i>
+            </div>
+            <span class="portal-tag emerald-tag">Personal Banking</span>
+          </div>
+          <h3>Customer Portal</h3>
+          <p>Instant access to account balances, fast fund transfers, deposits, instant withdrawals, and detailed transaction histories.</p>
+          <div class="card-features">
+            <span><i class="fa-solid fa-check"></i> Instant Money Transfer</span>
+            <span><i class="fa-solid fa-check"></i> Digital Passbook</span>
+            <span><i class="fa-solid fa-check"></i> Secure Deposits & Withdrawals</span>
+          </div>
+          <button class="portal-btn btn-emerald">
+            <span>Login to My Account</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Landing Footer -->
+  <footer class="landing-footer">
+    <div class="footer-container">
+      <p>© 2026 Advance Bank International Inc. All Rights Reserved. ISO 27001 Certified Banking Institution.</p>
+    </div>
+  </footer>
 </div>

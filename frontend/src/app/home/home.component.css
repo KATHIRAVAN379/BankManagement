@@ -1,331 +1,344 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+.landing-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0B132B 0%, #1C2541 50%, #0F172A 100%);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  position: relative;
+  overflow: hidden;
 }
 
-html,body{
-    width:100%;
-    height:100%;
-    overflow-x:hidden;
-    background:#edf3fb;
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
 }
 
-.container{
-
-    width:100%;
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:30px;
-
-    background:linear-gradient(135deg,#0F4C81,#2563EB,#60A5FA);
-
+.landing-header {
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  background: rgba(11, 19, 43, 0.6);
 }
 
-/* =========================
-      Main Card
-========================= */
-
-.login-card{
-
-    width:820px;
-    max-width:100%;
-
-    background:#ffffff;
-
-    border-radius:25px;
-
-    padding:50px;
-
-    text-align:center;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.18);
-
+.landing-nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* =========================
-      Logo
-========================= */
-
-.bank-logo{
-
-    width:100px;
-    height:100px;
-
-    margin:auto;
-
-    border-radius:50%;
-
-    background:linear-gradient(135deg,#2563EB,#1D4ED8);
-
-    color:white;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:45px;
-
-    margin-bottom:18px;
-
-    box-shadow:0 12px 30px rgba(37,99,235,.35);
-
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.logo-section h1{
-
-    font-size:42px;
-
-    color:#1E3A8A;
-
-    margin-bottom:8px;
-
-    font-weight:700;
-
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
 }
 
-.logo-section p{
-
-    color:#6B7280;
-
-    font-size:16px;
-
+.logo-text h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  line-height: 1;
 }
 
-/* =========================
-      Heading
-========================= */
-
-.heading{
-
-    margin:45px 0 35px;
-
+.logo-text h2 span {
+  color: #60A5FA;
 }
 
-.heading h2{
-
-    font-size:34px;
-
-    color:#111827;
-
-    margin-bottom:10px;
-
+.logo-text p {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 2px;
 }
 
-.heading p{
-
-    color:#6B7280;
-
-    font-size:15px;
-
+.nav-badges {
+  display: flex;
+  gap: 1rem;
 }
 
-/* =========================
-      Cards
-========================= */
-
-.cards{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
+.badge-item {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
-/* =========================
-      Individual Card
-========================= */
-
-.card{
-
-    width:300px;
-
-    padding:35px 25px;
-
-    border-radius:18px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    border:1px solid transparent;
-
+.badge-item i {
+  color: #10B981;
 }
 
-.card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 18px 35px rgba(0,0,0,.15);
-
+/* Hero Section */
+.hero-section {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* =========================
-      Admin
-========================= */
-
-.admin-card{
-
-    background:linear-gradient(135deg,#EFF6FF,#DBEAFE);
-
-    border-color:#BFDBFE;
-
+.hero-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.admin-card:hover{
-
-    background:linear-gradient(135deg,#DBEAFE,#BFDBFE);
-
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: #60A5FA;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
-/* =========================
-      Customer
-========================= */
-
-.customer-card{
-
-    background:linear-gradient(135deg,#ECFDF5,#D1FAE5);
-
-    border-color:#BBF7D0;
-
+.hero-text h1 {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
 }
 
-.customer-card:hover{
-
-    background:linear-gradient(135deg,#D1FAE5,#BBF7D0);
-
+.hero-text h1 span {
+  background: linear-gradient(135deg, #60A5FA, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* =========================
-      Icons
-========================= */
-
-.card-icon{
-
-    width:85px;
-    height:85px;
-
-    margin:auto;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-
-    font-size:38px;
-
-    margin-bottom:20px;
-
+.hero-text p {
+  font-size: 1.1rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
 }
 
-.admin-icon{
-
-    background:#2563EB;
-
+.trust-metrics {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.customer-icon{
-
-    background:#16A34A;
-
+.trust-item h4 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
 }
 
-/* =========================
-      Text
-========================= */
-
-.card h3{
-
-    font-size:28px;
-
-    color:#111827;
-
-    margin-bottom:15px;
-
+.trust-item span {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  font-weight: 500;
 }
 
-.card p{
-
-    color:#4B5563;
-
-    font-size:15px;
-
-    line-height:26px;
-
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* =========================
-      Footer
-========================= */
-
-.footer{
-
-    margin-top:40px;
-
-    color:#6B7280;
-
-    font-size:14px;
-
+/* Portal Cards */
+.portal-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* =========================
-      Responsive
-========================= */
-
-@media(max-width:768px){
-
-.login-card{
-
-    padding:35px 20px;
-
+.portal-card {
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.logo-section h1{
-
-    font-size:30px;
-
+.portal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  background: rgba(30, 41, 59, 0.85);
 }
 
-.heading{
-
-    margin:30px 0;
-
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 
-.heading h2{
-
-    font-size:28px;
-
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
 }
 
-.cards{
-
-    flex-direction:column;
-
+.card-icon.blue {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60A5FA;
+  border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
-.card{
-
-    width:100%;
-
-    max-width:340px;
-
+.card-icon.emerald {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
+.portal-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+.emerald-tag {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.portal-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+}
+
+.portal-card p {
+  font-size: 0.88rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.card-features {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.card-features span {
+  font-size: 0.78rem;
+  color: #CBD5E1;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-features i {
+  color: #10B981;
+  font-size: 0.7rem;
+}
+
+.portal-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  color: white;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-blue:hover {
+  background: linear-gradient(135deg, #1D4ED8, #1E40AF);
+}
+
+.btn-emerald {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-emerald:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Footer */
+.landing-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  color: #64748B;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+  .landing-header {
+    padding: 1.25rem 1.5rem;
+  }
 }
